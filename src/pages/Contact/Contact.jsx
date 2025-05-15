@@ -1,5 +1,5 @@
-const Contact = () => {
-    return (
+const Contact = () =>{
+   return (
         <div className="prueba">
             <h2>HOLAAAAAAAAAAA</h2>
         </div>
