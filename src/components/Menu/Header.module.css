@@ -1,0 +1,168 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgb(255,255,255);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.menuContainer {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10dvh;
+}
+
+.menuLogo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.menuControls {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+.menuControls svg {
+    width: 24px;
+    height: 24px;
+    color: var(--text-primary);
+}
+
+/*Parte izquierda*/
+.menuLogo { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    max-width: 300px;
+}
+.imagenLogo img{ 
+    height: 8dvh; 
+    margin: 2px;}
+.textoLogo h1{
+    font-size: 1rem; 
+    /* text-align: center; */
+}
+.menuOptions {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background-color: rgb(255,255,255);
+}
+
+.menuItem {
+    position: relative;
+}
+
+.linkButton {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    transition: color 0.3s, background 0.3s, border-radius 0.3s;
+    border-radius: 8px;
+}
+
+.linkButton:hover,
+.menuItem.active .linkButton {
+    color: rgb(200,0,0);
+    background: rgb(245,245,245);
+}
+
+/* Estilos para móvil */
+@media screen and (max-width: 768px) {
+    .menuControls {
+        display: block;
+    }
+
+    .menuOverlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(30,30,30,0.3);
+        z-index: 99;
+        transition: opacity 0.3s;
+        opacity: 1;
+    }
+    .menuOverlay.hide {
+        display: none;
+        opacity: 0;
+    }
+
+    .menuOptions {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75vw;
+        max-width: 320px;
+        height: 100vh;
+        background-color: rgb(255,255,255);
+        flex-direction: column;
+        padding: 3rem 2rem 2rem 2rem;
+        transition: right 0.3s cubic-bezier(.77,0,.18,1);
+        z-index: 100;
+        box-shadow: 0 8px 32px rgba(30,30,30,0.25);
+        border-top-left-radius: 24px;
+        border-bottom-left-radius: 24px;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .menuOptions.active {
+        right: 0;
+    }
+
+    .themeToggleContainer {
+        margin: 1rem 0;
+    }
+
+    .menuToggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 36px;
+        height: 28px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 101;
+    }
+
+    .bar {
+        width: 100%;
+        height: 4px;
+        background-color: rgb(30,30,30);
+        border-radius: 10px;
+        transition: all 0.3s cubic-bezier(.77,0,.18,1);
+    }
+
+    /* Cambios para la X */
+    .menuToggle.active .bar:nth-child(1) {
+        transform: translateY(12px) rotate(45deg);
+        background-color: rgb(200,0,0);
+    }
+    .menuToggle.active .bar:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    .menuToggle.active .bar:nth-child(3) {
+        transform: translateY(-12px) rotate(-45deg);
+        background-color: rgb(200,0,0);
+    }
+}

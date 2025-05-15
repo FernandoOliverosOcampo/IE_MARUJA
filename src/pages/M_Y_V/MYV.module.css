@@ -1,0 +1,24 @@
+.contendidoMYV{
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7rem;
+}
+.tarjetas{
+    display: flex;
+    height: 70dvh;
+    width: 60dvw;
+    flex-direction: column; 
+    padding: 2rem;
+    margin: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 10px;
+}
+.tarjetas h3{
+    font-size: 2rem;
+}
+.tarjetas p{
+    font-size: 1.2rem;
+}
