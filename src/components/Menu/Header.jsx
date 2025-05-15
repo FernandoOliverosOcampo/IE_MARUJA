@@ -104,7 +104,7 @@ const Menu = () => {
                 <div className={styles.menuContainer}>
                     <div className={styles.menuLogo}>
                         <div className={styles.imagenLogo}>
-                            <img src="./assets/img/log.png" alt="logoInstitución" />
+                            <img src="/img/log.png" alt="logoInstitución" />
                         </div>
                         <div className={styles.textoLogo}>
                             <h1>Institución Educativa Maruja Del Rosario Aguilar</h1>
@@ -150,11 +150,20 @@ const Menu = () => {
                                         <ul>
                                             {
                                                 despegable.map((item) => (
-                                                    <li key={item.id}><a href={item.href}>{item.label}</a></li>
+                                                    <li key={item.id}>
+                                                        <button
+                                                            className={styles.linkButton}
+                                                            onClick={() => {
+                                                                handleItemClick(item);
+                                                                setOpenDropdown(null); // Cierra el dropdown al navegar
+                                                            }}
+                                                        >
+                                                            {item.label}
+                                                        </button>
+                                                    </li>
                                                 ))
                                             }
                                         </ul>
-
                                     )
                                 }
                             </li>

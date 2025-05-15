@@ -6,7 +6,7 @@ const QuienesSomos = () => {
             <section  className={styles.sectionContainer} id="quienes-somos">
                 <div className={styles.quienesSomos}>
                     <div className={styles.imagenSomos}>
-                        <img src="./src/assets/img/log.png" alt="" />
+                        <img src="/img/log.png" alt="" />
                     </div>
 
                     <div className={styles.textoSomos}>
