@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(../../assets/img/fon.webp) no-repeat center center;
+    background: url(/img/fon.webp) no-repeat center center;
     background-size: cover;
     height: 95vh; /* Reduce la altura de la sección */
     padding: 2rem;
