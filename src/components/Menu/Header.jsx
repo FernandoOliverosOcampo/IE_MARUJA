@@ -104,7 +104,7 @@ const Menu = () => {
                 <div className={styles.menuContainer}>
                     <div className={styles.menuLogo}>
                         <div className={styles.imagenLogo}>
-                            <img src="./src/assets/img/log.png" alt="logoInstitución" />
+                            <img src="./assets/img/log.png" alt="logoInstitución" />
                         </div>
                         <div className={styles.textoLogo}>
                             <h1>Institución Educativa Maruja Del Rosario Aguilar</h1>
