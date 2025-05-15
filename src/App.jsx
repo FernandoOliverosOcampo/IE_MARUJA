@@ -9,9 +9,10 @@ import Footer from './components/Footer/Footer'
 
 {/*Pages routes*/}
 import Inicio from './pages/Inicio/Inicio';
-import Contact from './pages/Contact/Contact';
+import QuienesSomos from './pages/quienesSomos/quienesSomos';
 import MYV from './pages/M_Y_V/MYV.JSX';
-import MasInfo from './pages/MasInfo/MasInfo';
+import Location from './pages/Location/Location';
+import Contact from './pages/Contact/Contact';
 function App() {
  
 
@@ -21,9 +22,10 @@ function App() {
       <Menu/>
         <Routes>
           <Route path='/' element={<Inicio/>}/>
-          <Route path="/contacto" element={<Contact />} />
+          <Route path='/sede' element={<Location/>}/>
+          <Route path="/quienes-somos" element={<QuienesSomos />} />
           <Route path="/mision-vision" element={<MYV />} />
-          <Route path="/mas-informacion" element={<MasInfo />} />
+          <Route path="/contacto" element={<Contact />} />
 
         </Routes>
       <Footer/>

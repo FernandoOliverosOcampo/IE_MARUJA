@@ -1,12 +1,75 @@
-# React + Vite
+# 🏫 INSTITUCIÓN EDUCATIVA MARUJA DEL ROSARIO AGUILAR
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio web oficial de la **INSTITUCIÓN EDUCATIVA MARUJA DEL ROSARIO AGUILAR**.  
+Esta plataforma permite a estudiantes, padres y visitantes conocer información clave de la institución, su ubicación, actividades, y otros datos relevantes.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías y Librerías Usadas
 
-## Expanding the ESLint configuration
+Este proyecto fue desarrollado con tecnologías modernas del ecosistema JavaScript:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **[React](https://reactjs.org/)** – Biblioteca principal para construir la interfaz de usuario.
+- **[React Router DOM](https://reactrouter.com/)** – Enrutamiento y navegación entre páginas.
+- **[Leaflet](https://leafletjs.com/)** – Biblioteca de mapas interactivos.
+- **[React Leaflet](https://react-leaflet.js.org/)** – Integración de Leaflet con React.
+- **[@fortawesome/react-fontawesome](https://fontawesome.com/v5/docs/web/use-with/react/)** – Iconos personalizados y estilizados.
+
+---
+
+## 📁 Estructura del Proyecto
+
+📦 maruja-educativa
+┣ 📁 public
+┣ 📁 src
+┃ ┣ 📁 components
+┃ ┣ 📁 pages
+┃ ┣ 📁 assets
+┃ ┣ 📄 App.js
+┃ ┣ 📄 index.js
+┗ 📄 README.md
+
+- `components/`: Componentes reutilizables como encabezados, pies de página, menús, etc.
+- `pages/`: Vistas principales del sitio (Inicio, Nosotros, Noticias, Contacto).
+- `assets/`: Archivos estáticos como imágenes, estilos, íconos, etc.
+
+---
+
+## 🌍 Funcionalidades
+
+- Navegación entre secciones de la institución (Inicio, Nosotros, Noticias, Contacto).
+- Mapa interactivo con la ubicación geográfica de la sede.
+- Diseño responsivo y moderno para todo tipo de dispositivos.
+- Íconos personalizados para mejorar la experiencia de usuario.
+
+---
+
+## 📦 Instalación
+
+Sigue estos pasos para ejecutar el proyecto localmente:
+
+1. Clona este repositorio:
+```bash
+git clone https://github.com/FernandoOliverosOcampo/IE_MARUJA/tree/development
+
+2. Accede al directorio del proyecto:
+cd maruja-educativa
+3. Instala las dependencias:
+npm install
+4. Inicia el servidor de desarrollo:
+npm start
+
+🌐 Enlace en Producción
+
+🔗 por asignar
+
+📸 Capturas de Pantalla
+por asignar
+
+👥 Créditos
+Desarrollado por el equipo TIC de la institución.
+Contribuciones y mejoras son bienvenidas.
+
+📜 Licencia
+Este proyecto es de uso interno y educativo.
+Todos los derechos reservados © INSTITUCIÓN EDUCATIVA MARUJA DEL ROSARIO AGUILAR.

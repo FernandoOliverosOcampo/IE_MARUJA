@@ -1,4 +1,4 @@
-import { items } from "../../constant.js";
+import { items, despegable } from "../../constant.js";
 import styles from './Header.module.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState(null);
 
     useEffect(() => {
         const checkIfMobile = () => {
@@ -88,6 +89,11 @@ const Menu = () => {
         }
     };
 
+{/*Boton despegable*/}
+ const toggleDropdown = (menu) => {
+    setOpenDropdown(openDropdown === menu ? null : menu);
+  };
+
     return (
         <>
             {/* Overlay para el menú lateral */}
@@ -136,6 +142,24 @@ const Menu = () => {
                                 </button>
                             </div>
                         ))}
+                        <ul>
+                            <li>
+                                <button onClick={() => toggleDropdown('masInfo')}>Mas información</button>
+                                {
+                                    openDropdown === 'masInfo' && (
+                                        <ul>
+                                            {
+                                                despegable.map((item) => (
+                                                    <li key={item.id}><a href={item.href}>{item.label}</a></li>
+                                                ))
+                                            }
+                                        </ul>
+
+                                    )
+                                }
+                            </li>
+                        </ul>
+
                     </nav>
                 </div>
             </header>
