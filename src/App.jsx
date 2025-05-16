@@ -12,7 +12,7 @@ import Inicio from './pages/Inicio/Inicio';
 import QuienesSomos from './pages/quienesSomos/quienesSomos';
 import MisionVision from './pages/M_Y_V/MisionVision';
 import Location from './pages/Location/Location';
-import Contact from './pages/Contact/Contact';
+import Resolucion from './pages/Resolucion/Resolucion';
 function App() {
  
 
@@ -25,7 +25,7 @@ function App() {
           <Route path='/sede' element={<Location/>}/>
           <Route path="/quienes-somos" element={<QuienesSomos />} />
           <Route path="/mision-vision" element={<MisionVision />} />
-          <Route path="/contacto" element={<Contact />} />
+          <Route path="/resolucion" element={<Resolucion />} />
 
         </Routes>
       <Footer/>
