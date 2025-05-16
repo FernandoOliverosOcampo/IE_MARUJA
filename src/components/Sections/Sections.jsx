@@ -1,5 +1,9 @@
 import styles from './Sections.module.css'
 import { tarjetas } from '../../constant';
+import { urlWhatsapp } from '../../constant';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp} from '@fortawesome/free-brands-svg-icons'; 
+
 const Sections = ()=>{
     return(
         <div className={styles.sectionsWrapper}>
@@ -8,7 +12,9 @@ const Sections = ()=>{
             <div className={styles.backgroundSection}>
                 <div className={styles.textoBanner}>
                     <h2>Donde cada paso cuenta para llegar más lejos.</h2>
+                        <a href={urlWhatsapp}className={styles.whatsappButton}><FontAwesomeIcon icon={faWhatsapp} /> Contactanos por WhatsApp</a>
                 </div>
+                
             </div>
             </section>
          
@@ -33,9 +39,11 @@ const Sections = ()=>{
                                         <span>{item.grados}</span>
                                     </div>
                                     <div className="contenido">
-                                        <p>{item.contenido}</p>
+                                        <p><span>Dirigido a:</span>{item.contenido}</p>
                                         <br />
-                                        <p>{item.objetivo}</p>
+                                        <p><span>Objetivo:</span>{item.objetivo}</p>
+                                        <br />
+                                        <p><span>Modalidad:</span>{item.modo}</p>
                                     </div>
                                 </div>
                             

@@ -1,7 +1,7 @@
 const items = [
     { label: 'Inicio', id: 1, type: 'route', href: '/' },
     { label: 'Sede', id: 2, type: 'route', href: '/sede' },
-    { label: 'Contacto', id: 3, type: 'route', href: '/contacto' },
+    { label: 'Resolución 1195', id: 3, type: 'route', href: '/resolucion' },
 ];
 
 const despegable = [
@@ -10,14 +10,17 @@ const despegable = [
 ];
 
 const contenido = [
-    { label: 'Misión', contenido: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste tempore quas ad tempora modi nam quae, molestiae eum, alias reprehenderit dolorum necessitatibus saepe vel unde quasi vero eligendi est ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, modi, fugit incidunt reiciendis nesciunt nihil fugiat error aliquid aliquam tenetur vitae. Tempora vitae beatae placeat, adipisci dicta suscipit eum voluptatibus!', id: 1 },
-    { label: 'Visión', contenido: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste tempore quas ad tempora modi nam quae, molestiae eum, alias reprehenderit dolorum necessitatibus saepe vel unde quasi vero eligendi est ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, modi, fugit incidunt reiciendis nesciunt nihil fugiat error aliquid aliquam tenetur vitae. Tempora vitae beatae placeat, adipisci dicta suscipit eum voluptatibus!', id: 2 }
+    { label: 'Misión', contenido: 'La Institución Educativa Maruja Del Rosario Aguilar tiene como misión brindar una educación de calidad, inclusiva y flexible a niños, adolescentes y jóvenes que requieren nivelación académica, promoviendo el desarrollo integral, la equidad y la formación en valores. A través de un modelo pedagógico centrado en el estudiante, buscamos garantizar el acceso, permanencia y culminación exitosa de los estudios básicos y medios, contribuyendo al mejoramiento de la calidad de vida y al fortalecimiento del tejido social.', id: 1 },
+    { label: 'Visión', contenido: 'Para el año 2030, la Institución Educativa Maruja Del Rosario Aguilar será reconocida como un referente en educación nivelatoria a nivel regional, destacándose por su compromiso con la transformación social, el acompañamiento pedagógico personalizado y la formación de ciudadanos críticos, responsables y comprometidos con el desarrollo sostenible de su comunidad.', id: 2 }
 ];
 
 const tarjetas = [
-    { label: 'Educación Primaria Nivelatoria', id: 1, grados: 'Grados: 1° a 5°', img: '/img/primaria.webp', contenido: 'Dirigido a: Niños y niñas que no han iniciado o han interrumpido su educación básica primaria ', objetivo: 'Objetivo: Brindar las herramientas fundamentales en lectoescritura, matemáticas, ciencias y desarrollo personal, permitiendo el ingreso a la educación media Modalidad: Nivelación flexible con acompañamiento docente personalizado.' },
-    { label: ' Educación Media Nivelatoria', id: 2, grados: 'Grados: 6° a 9°', img: '/img/secundaria.webp', contenido: 'Dirigido a: Adolescentes y jóvenes que desean continuar sus estudios de básica secundaria después de un periodo de interrupción', objetivo: ' Objetivo: Fortalecer competencias académicas clave, pensamiento crítico y habilidades sociales para la vida Metodología: Aprendizaje por competencias, con énfasis en valores y trabajo colaborativo.' },
-    { label: 'Educación Superior Secundaria Nivelatoria', id: 3, grados: 'Grados: 10° y 11°', img: '/img/media.webp', contenido: 'Dirigido a: Jóvenes que buscan culminar su bachillerato de manera flexible', objetivo: ' Objetivo: Preparar a los estudiantes para obtener el título de Bachiller Académico, y orientarlos en la elección de su proyecto de vida: educación superior, técnica o inserción laboral. Enfoque: Formación integral, orientación vocacional y preparación para pruebas Saber 11.' }
+    { label: 'Educación Primaria Nivelatoria', id: 1, grados: 'Grados: 1° a 5°', img: '/img/primaria.webp', contenido: ' Niños y niñas que no han iniciado o han interrumpido su educación básica primaria ', objetivo: ' Brindar las herramientas fundamentales en lectoescritura, matemáticas, ciencias y desarrollo personal, permitiendo el ingreso a la educación media', modo:' Nivelación flexible con acompañamiento docente personalizado.' },
+    { label: ' Educación Media Nivelatoria', id: 2, grados: 'Grados: 6° a 9°', img: '/img/secundaria.webp', contenido: ' Adolescentes y jóvenes que desean continuar sus estudios de básica secundaria después de un periodo de interrupción', objetivo: '  Fortalecer competencias académicas clave, pensamiento crítico y habilidades sociales para la vida', modo: ' Aprendizaje por competencias, con énfasis en valores y trabajo colaborativo.' },
+    { label: 'Educación Superior Secundaria Nivelatoria', id: 3, grados: 'Grados: 10° y 11°', img: '/img/media.webp', contenido: ' Jóvenes que buscan culminar su bachillerato de manera flexible', objetivo: '  Preparar a los estudiantes para obtener el título de Bachiller Académico, y orientarlos en la elección de su proyecto de vida: educación superior, técnica o inserción laboral.', modo:' Formación integral, orientación vocacional y preparación para pruebas Saber 11.' }
 ];
+const whatsappMessage = `Hola quiero más información acerca de la escuela.`;
 
-export { items, contenido, despegable, tarjetas };
+const urlWhatsapp =`https://wa.me/3058290062?text=${encodeURIComponent(whatsappMessage)}`
+const urlResolucion = `https://www.atlantico.gov.co/images/stories/adjuntos/educacion/Notificacion_jur/Res_1195_Licencia_IE_maruja_del_Rosario_-_Manat.pdf`
+export { items, contenido, despegable, tarjetas, urlWhatsapp, urlResolucion};

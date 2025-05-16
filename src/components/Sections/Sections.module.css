@@ -90,3 +90,22 @@ span{
     height: 35dvh;
     width: 50dvw;
 }
+.whatsappButton {
+    display: inline-block;
+    /* margin: 20px; */
+    height: 5vh;
+    width: 20dvw;
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .whatsappButton:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  }
