@@ -109,3 +109,59 @@ span{
     transform: scale(1.1);
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .tarjetas {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .tarjeta {
+    width: 80vw;
+    padding: 1.5rem;
+  }
+  .imagen img {
+    width: 80vw;
+    height: 25vh;
+    object-fit: cover;
+  }
+  .whatsappButton {
+    width: 60vw;
+    font-size: 0.95rem;
+  }
+  .backgroundSection {
+    padding: 1.5rem 0.5rem;
+  }
+  .textoBanner {
+    font-size: 2rem;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tarjeta {
+    width: 95vw;
+    padding: 1rem;
+  }
+  .imagen img {
+    width: 95vw;
+    height: 20vh;
+  }
+  .whatsappButton {
+    width: 90vw;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  .textoBanner {
+    font-size: 1.3rem;
+    padding: 0 0.2rem;
+  }
+  .titulo {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+  .backgroundSection {
+    padding: 1rem 0.2rem;
+  }
+}

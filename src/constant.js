@@ -19,7 +19,7 @@ const tarjetas = [
     { label: ' Educación Media Nivelatoria', id: 2, grados: 'Grados: 6° a 9°', img: '/img/secundaria.webp', contenido: ' Adolescentes y jóvenes que desean continuar sus estudios de básica secundaria después de un periodo de interrupción', objetivo: '  Fortalecer competencias académicas clave, pensamiento crítico y habilidades sociales para la vida', modo: ' Aprendizaje por competencias, con énfasis en valores y trabajo colaborativo.' },
     { label: 'Educación Superior Secundaria Nivelatoria', id: 3, grados: 'Grados: 10° y 11°', img: '/img/media.webp', contenido: ' Jóvenes que buscan culminar su bachillerato de manera flexible', objetivo: '  Preparar a los estudiantes para obtener el título de Bachiller Académico, y orientarlos en la elección de su proyecto de vida: educación superior, técnica o inserción laboral.', modo:' Formación integral, orientación vocacional y preparación para pruebas Saber 11.' }
 ];
-const whatsappMessage = `Hola quiero más información acerca de la escuela.`;
+const whatsappMessage = `Hola quiero obtener más información acerca de la escuela.`;
 
 const urlWhatsapp =`https://wa.me/3058290062?text=${encodeURIComponent(whatsappMessage)}`
 const urlResolucion = `https://www.atlantico.gov.co/images/stories/adjuntos/educacion/Notificacion_jur/Res_1195_Licencia_IE_maruja_del_Rosario_-_Manat.pdf`

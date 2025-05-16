@@ -24,12 +24,12 @@ const Location = () => {
                     </p>
                 </div>
                 <div className={styles.infomap}>
-                     <div>
-                    <MapWithAddress 
-                        address="Calle 4 # 4-30, Manatí, Colombia" 
-                        label="Institución Educativa Maruja del Rosario Aguilar" 
-                    />
-                </div>
+                     <div >
+                        <MapWithAddress 
+                            address="Calle 4 # 4-30, Manatí, Colombia" 
+                            label="Institución Educativa Maruja del Rosario Aguilar" 
+                        />
+                    </div>
                 <div className={styles.datos}>
                     <span>
                         <p><FontAwesomeIcon icon={faLocationDot} />  Dirección : Calle 4 # 4-30, Manatí, Colombia</p>

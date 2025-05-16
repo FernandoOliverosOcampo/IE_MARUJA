@@ -12,7 +12,7 @@ const Sections = ()=>{
             <div className={styles.backgroundSection}>
                 <div className={styles.textoBanner}>
                     <h2>Donde cada paso cuenta para llegar más lejos.</h2>
-                        <a href={urlWhatsapp}className={styles.whatsappButton}><FontAwesomeIcon icon={faWhatsapp} /> Contactanos por WhatsApp</a>
+                        <a href={urlWhatsapp}className={styles.whatsappButton} target='_blank'><FontAwesomeIcon icon={faWhatsapp} /> Contactanos por WhatsApp</a>
                 </div>
                 
             </div>

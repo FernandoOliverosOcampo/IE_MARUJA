@@ -34,3 +34,32 @@
 
 }
 
+/* Responsive styles */
+@media (max-width: 900px) {
+  .quienesSomos {
+    flex-direction: column;
+    padding: 3rem 1rem;
+    gap: 2rem;
+  }
+  .imagenSomos,
+  .textoSomos {
+    max-width: 90vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .quienesSomos {
+    padding: 1.5rem 0.5rem;
+  }
+  .imagenSomos,
+  .textoSomos {
+    max-width: 98vw;
+  }
+  .textoSomos h3 {
+    font-size: 1.3rem;
+  }
+  .textoSomos p {
+    font-size: 1rem;
+  }
+}
+
