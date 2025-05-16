@@ -61,7 +61,7 @@ npm start
 
 🌐 Enlace en Producción
 
-🔗 por asignar
+🔗 https://iemarujadelrosarioaguilar.netlify.app/
 
 📸 Capturas de Pantalla
 por asignar
