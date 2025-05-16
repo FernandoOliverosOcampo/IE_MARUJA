@@ -1,6 +1,6 @@
 .sectionContainer {
     width: 100%;
-    min-height: 87vh;
+    min-height: 90dvh;
     padding: 0;
     margin: 0;
     scroll-snap-align: start;
@@ -16,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     width: 50dvw;
-    height: 70dvh;
+    height: auto;
     margin: 0 auto;
     padding: 20px;
     background: #fff;
@@ -41,4 +41,40 @@
 .button:hover{
   transition: all 0.3s ease-in-out;
   transform: scale(1.1);
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .container {
+    width: 80vw;
+    padding: 16px;
+  }
+  .sectionContainer {
+    padding-top: 4rem;
+  }
+    .button {
+    width: 80%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 98vw;
+    padding: 8px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .sectionContainer {
+    padding-top: 2rem;
+  }
+  .button {
+    width: 80%;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
 }

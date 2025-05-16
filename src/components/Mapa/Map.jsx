@@ -28,8 +28,7 @@ const MapWithAddress = ({ address, label }) => {
   return (
     <div>
       {position ? (
-        <MapContainer center={position} zoom={16} style={{ height: '400px', width: '600px' }}
-           >
+        <MapContainer center={position} zoom={16} style={{ height: '400px', width: '370px' }}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
