@@ -104,7 +104,7 @@ const Menu = () => {
                 <div className={styles.menuContainer}>
                     <div className={styles.menuLogo}>
                         <div className={styles.imagenLogo}>
-                            <img src="/img/log.png" alt="logoInstitución" />
+                            <img src="/img/log.webp" alt="logoInstitución" />
                         </div>
                         <div className={styles.textoLogo}>
                             <h1>Institución Educativa Maruja Del Rosario Aguilar</h1>
@@ -144,7 +144,7 @@ const Menu = () => {
                         ))}
                         <ul>
                             <li>
-                                <button onClick={() => toggleDropdown('masInfo')}>Mas información</button>
+                                <button onClick={() => toggleDropdown('masInfo')}>Sobre nosotros</button>
                                 {
                                     openDropdown === 'masInfo' && (
                                         <ul>

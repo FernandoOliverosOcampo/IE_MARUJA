@@ -13,6 +13,8 @@ import QuienesSomos from './pages/quienesSomos/quienesSomos';
 import MisionVision from './pages/M_Y_V/MisionVision';
 import Location from './pages/Location/Location';
 import Resolucion from './pages/Resolucion/Resolucion';
+import Historia from './pages/Historia/Historia';
+
 function App() {
  
 
@@ -26,6 +28,7 @@ function App() {
           <Route path="/quienes-somos" element={<QuienesSomos />} />
           <Route path="/mision-vision" element={<MisionVision />} />
           <Route path="/resolucion" element={<Resolucion />} />
+          <Route path='/historia' element={<Historia/>}/>
 
         </Routes>
       <Footer/>

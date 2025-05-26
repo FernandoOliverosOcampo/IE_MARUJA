@@ -51,7 +51,7 @@
 }
 
 /*TARJETAS*/
-.containerTarjetas{
+.container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,6 +60,11 @@
 .titulo{
     font-size: 2rem;
     padding: 2rem;
+}
+.texto{
+    font-size: 1.2rem;
+    padding: 2rem;
+    width: 90dvw;
 }
 .tarjetas{
     display: flex;
@@ -76,6 +81,11 @@
     width: 30dvw;
     border-radius: 10px;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+.tarjeta:hover{
+  transform: translateY(-4px);
+  transition: all 0.3s ease-in-out;
+  
 }
 span{
     font-weight: bold;
@@ -164,4 +174,14 @@ span{
   .backgroundSection {
     padding: 1rem 0.2rem;
   }
+}
+
+ul, ol {
+  display: block;
+  padding-left: 2rem; /* o el valor que prefieras */
+}
+
+li {
+  display: list-item;
+  width: auto;
 }
