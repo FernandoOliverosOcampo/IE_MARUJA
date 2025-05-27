@@ -1,4 +1,4 @@
-import MapWithAddress from '../../components/Mapa/Map'
+import GoogleMapEmbed from '../../components/Mapa/Map'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'; 
 import styles from './Location.module.css'
@@ -25,9 +25,9 @@ const Location = () => {
                 </div>
                 <div className={styles.infomap}>
                      <div >
-                        <MapWithAddress 
+                        <GoogleMapEmbed 
                             address="Calle 4 # 4-30, Manatí, Colombia" 
-                            label="Institución Educativa Maruja del Rosario Aguilar" 
+                            // label="Institución Educativa Maruja del Rosario Aguilar" 
                         />
                     </div>
                 <div className={styles.datos}>

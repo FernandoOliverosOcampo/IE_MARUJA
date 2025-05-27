@@ -102,8 +102,6 @@ span{
 }
 .whatsappButton {
     display: inline-block;
-    /* margin: 20px; */
-    height: 5vh;
     width: 20dvw;
     background-color: #25D366;
     color: #fff;

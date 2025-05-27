@@ -1,14 +1,13 @@
 .contendidoMYV{
     display: flex;
     flex-direction: column;
-    height: 100dvh;
     justify-content: center;
     align-items: center;
     padding-top: 7rem;
 }
 .tarjetas{
     display: flex;
-    height: 70dvh;
+
     width: 60dvw;
     flex-direction: column; 
     padding: 2rem;
@@ -27,12 +26,8 @@
 @media (max-width: 900px) {
   .tarjetas {
     width: 90vw;
-    height: auto;
-    padding: 1rem;
   }
-  .contendidoMYV {
-    padding-top: 4rem;
-  }
+
 }
 
 @media (max-width: 600px) {
@@ -43,9 +38,7 @@
     box-shadow: none;
     border-radius: 0;
   }
-  .contendidoMYV {
-    padding-top: 2rem;
-  }
+  
   .tarjetas h3 {
     font-size: 1.3rem;
   }

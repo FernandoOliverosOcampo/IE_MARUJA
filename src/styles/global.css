@@ -1,0 +1,51 @@
+/* Estilos globales para la aplicación */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Establecer altura completa para html y body */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Estructura principal con Grid */
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header, main, footer */
+  grid-template-columns: 100%;
+  min-height: 100vh;
+}
+
+/* Asegurar que el main ocupe el espacio disponible */
+main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* padding: 1rem; */
+}
+
+/* Ajustes para el header */
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Asegurar que el footer se quede abajo */
+footer {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  main {
+    padding: 0.5rem;
+  }
+}

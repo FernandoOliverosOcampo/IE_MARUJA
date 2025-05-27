@@ -90,8 +90,16 @@ const Menu = () => {
     };
 
 {/*Boton despegable*/}
- const toggleDropdown = (menu) => {
-    setOpenDropdown(openDropdown === menu ? null : menu);
+  const handleMouseEnter = (menu) => {
+    if (!isMobile) {
+      setOpenDropdown(menu);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setOpenDropdown(null);
+    }
   };
 
     return (
@@ -143,11 +151,23 @@ const Menu = () => {
                             </div>
                         ))}
                         <ul>
-                            <li>
-                                <button onClick={() => toggleDropdown('masInfo')}>Sobre nosotros</button>
+                            <li 
+                                onMouseEnter={() => handleMouseEnter('masInfo')}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                <button 
+                                    onClick={() => isMobile && toggleDropdown('masInfo')}
+                                    aria-expanded={openDropdown === 'masInfo'}
+                                    aria-haspopup="true"
+                                >
+                                    Sobre nosotros
+                                </button>
                                 {
                                     openDropdown === 'masInfo' && (
-                                        <ul>
+                                        <ul 
+                                            role="menu"
+                                            aria-label="Submenú de Sobre Nosotros"
+                                        >
                                             {
                                                 despegable.map((item) => (
                                                     <li key={item.id}>

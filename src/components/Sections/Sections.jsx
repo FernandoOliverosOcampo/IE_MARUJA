@@ -53,6 +53,7 @@ const Sections = ()=>{
                                         <span>{item.ciclos}</span>
                                     </div>
                                     <div className="grados">
+                                        <br />
                                         <span>{item.grados}</span>
                                     </div>
                                     <div className="contenido">
@@ -78,7 +79,31 @@ const Sections = ()=>{
                         <h3>Admisiones</h3>
                     </div>
                     <div className={styles.texto}>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt temporibus blanditiis, cupiditate delectus, ipsam soluta error voluptas, dolores iure fuga tempora? Ea quidem aliquam facilis necessitatibus neque iusto sapiente! Quia.</p>
+                        <p>
+                            La Institución Educativa Maruja del Rosario brinda oportunidades de acceso a la educación para jóvenes y adultos en condición de desescolarización, permitiéndoles retomar su proceso formativo a través de un modelo flexible y adaptado a sus necesidades.
+                        </p>
+                        <br />
+                        <h4>Requisitos</h4>
+                        <p>
+                            Para ingresar, el aspirante debe ser una persona joven o adulta que haya interrumpido su trayectoria académica y desee culminar sus estudios de básica o media.
+                        </p>
+                        <br />
+                        <h4>Proceso de Inscripción</h4>
+                        <p>El proceso de admisión consta de los siguientes pasos:</p>
+                        <br />
+
+                        <ul>
+                            <li> <span>1.</span> Solicitud de ingreso.</li>
+                            <li><span>2.</span> Entrega de la documentación básica requerida (documento de identidad, certificados de estudio anteriores, entre otros).</li>
+                            <li><span>3.</span> Entrevista de orientación, donde se evalúa el nivel educativo y se define el ciclo adecuado de ingreso.</li>
+                        </ul>
+                        <br />
+                        <h4>Calendario de Matrículas</h4>
+                        <p>Las inscripciones están abiertas durante todo el año, de acuerdo con la disponibilidad de cupos en los diferentes niveles educativos.</p>
+                        <br />
+                        <h4>Costos</h4>
+                        <p>Para mayor información, comunicarse directamente con la institución a través de los canales de contacto oficiales.</p>
+                        <br />
                     </div>
                 </div>
               

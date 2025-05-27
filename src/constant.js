@@ -27,7 +27,7 @@ const tarjetas = [
 
 //contacto
 const whatsappMessage = `Hola quiero obtener más información acerca de la escuela.`;
-
-const urlWhatsapp =`https://wa.me/3216803975?text=${encodeURIComponent(whatsappMessage)}`
+const numero = '+573216803975' 
+const urlWhatsapp =`https://wa.me/${numero}?text=${encodeURIComponent(whatsappMessage)}`
 const urlResolucion = `https://www.atlantico.gov.co/images/stories/adjuntos/educacion/Notificacion_jur/Res_1195_Licencia_IE_maruja_del_Rosario_-_Manat.pdf`
 export { items, contenido, despegable, tarjetas, urlWhatsapp, urlResolucion};

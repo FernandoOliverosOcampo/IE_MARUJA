@@ -1,18 +1,14 @@
 /* Map.module.css */
 .mapResponsive {
-  width: 100%;
-  max-width: 600px;
-  height: 50vw;
-  max-height: 400px;
-  min-height: 250px;
+  width: 500px;
+  height: 50vh;
   margin: 0 auto;
   border-radius: 10px;
   overflow: hidden;
 }
 @media (max-width: 600px) {
   .mapResponsive {
-    height: 60vw;
-    max-height: 300px;
-    min-height: 180px;
+    height: 60vh;
+    width: 90dvw;
   }
 }

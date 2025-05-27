@@ -107,6 +107,35 @@ ul ul {
   padding: 10px 0;
   min-width: 200px;
   z-index: 1000;
+  /* Para transición suave */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.2s ease, visibility 0.3s 0.1s;
+  /* Asegurar que el menú esté debajo del botón */
+  top: 100%;
+  left: 0;
+}
+
+/* Mostrar submenú al hacer hover o cuando está abierto */
+li:hover > ul,
+li:focus-within > ul,
+ul[role="menu"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+/* Asegurar que el menú no desaparezca al mover el ratón entre el botón y el menú */
+li:hover > ul:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: transparent;
 }
 
 /* Estilo de los elementos del submenú */
@@ -122,6 +151,21 @@ ul ul li:hover {
 li {
   position: relative;
   display: inline-block;
+}
+
+/* Mejorar accesibilidad del botón del menú */
+button[aria-haspopup="true"] {
+  position: relative;
+  padding-right: 20px;
+}
+
+button[aria-haspopup="true"]:after {
+  content: '▼';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7em;
 }
 
 
