@@ -169,12 +169,38 @@ button[aria-haspopup="true"]:after {
 }
 
 
+/* Estilos para menú desplegable en móvil */
+.mobileDropdown {
+  width: 100%;
+}
+
+.mobileDropdownButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.dropdownArrow {
+  margin-left: 10px;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
 /* Estilos para móvil */
 @media screen and (max-width: 768px) {
     .menuControls {
         display: block;
     }
-
+    button[aria-haspopup="true"]:after {
+        content: '';
+    }
     .menuOverlay {
         display: block;
         position: fixed;

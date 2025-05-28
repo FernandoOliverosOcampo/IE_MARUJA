@@ -90,6 +90,12 @@ const Menu = () => {
     };
 
 {/*Boton despegable*/}
+  const toggleDropdown = (menu) => {
+    if (isMobile) {
+      setOpenDropdown(openDropdown === menu ? null : menu);
+    }
+  };
+
   const handleMouseEnter = (menu) => {
     if (!isMobile) {
       setOpenDropdown(menu);
@@ -154,13 +160,20 @@ const Menu = () => {
                             <li 
                                 onMouseEnter={() => handleMouseEnter('masInfo')}
                                 onMouseLeave={handleMouseLeave}
+                                className={isMobile ? styles.mobileDropdown : ''}
                             >
                                 <button 
-                                    onClick={() => isMobile && toggleDropdown('masInfo')}
+                                    onClick={() => toggleDropdown('masInfo')}
                                     aria-expanded={openDropdown === 'masInfo'}
                                     aria-haspopup="true"
+                                    className={isMobile ? styles.mobileDropdownButton : ''}
                                 >
                                     Sobre nosotros
+                                    {isMobile && (
+                                        <span className={styles.dropdownArrow}>
+                                            {openDropdown === 'masInfo' ? '▲' : '▼'}
+                                        </span>
+                                    )}
                                 </button>
                                 {
                                     openDropdown === 'masInfo' && (
