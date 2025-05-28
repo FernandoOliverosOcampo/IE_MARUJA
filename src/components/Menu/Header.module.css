@@ -70,15 +70,36 @@
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem ;
     transition: color 0.3s, background 0.3s, border-radius 0.3s;
     border-radius: 8px;
+    text-align: start;
+    
+}
+.linkOptions{
+  background: none;
+    border: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem ;
+    transition: color 0.3s, background 0.3s, border-radius 0.3s;
+    border-radius: 8px;
+    text-align: start;
+}
+.linkOptions:hover {
+  transform: translateX(3px);
+  transition: all 0.3s ease-in-out;
+   color: rgb(200,0,0);
+    background: rgb(245,245,245);
 }
 
 .linkButton:hover,
-.menuItem.active .linkButton {
+.menuItem.active .linkButton .linkOptions{
     color: rgb(200,0,0);
     background: rgb(245,245,245);
+    
 }
 /*DESPEGABLE*/
 /* Estilo base del contenedor */
@@ -105,7 +126,7 @@ ul ul {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 5px;
   padding: 10px 0;
-  min-width: 200px;
+  min-width: 205px;
   z-index: 1000;
   /* Para transición suave */
   opacity: 0;
@@ -125,6 +146,7 @@ ul[role="menu"] {
   visibility: visible;
   transform: translateY(0);
   transition-delay: 0s;
+  
 }
 
 /* Asegurar que el menú no desaparezca al mover el ratón entre el botón y el menú */

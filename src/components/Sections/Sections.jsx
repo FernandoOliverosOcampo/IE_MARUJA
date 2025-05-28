@@ -1,6 +1,6 @@
 import styles from './Sections.module.css'
-import { tarjetas } from '../../constant';
-import { urlWhatsapp } from '../../constant';
+import { tarjetas } from '../../constant/tarjetasConstant';
+import { urlWhatsapp } from '../../constant/urlConstat';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp} from '@fortawesome/free-brands-svg-icons'; 
 

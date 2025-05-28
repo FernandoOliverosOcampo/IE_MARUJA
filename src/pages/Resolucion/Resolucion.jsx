@@ -1,5 +1,5 @@
 import styles from './Resolucion.module.css'
-import { urlResolucion } from '../../constant';
+import { urlResolucion } from '../../constant/urlConstat';
 const Resolucion = () =>{
  
    return (

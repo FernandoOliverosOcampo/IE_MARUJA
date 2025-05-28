@@ -1,4 +1,4 @@
-import { contenido } from "../../constant";
+import { contenido } from "../../constant/misionVisionConstant";
 import styles from './MYV.module.css'
 const MisionVision = () =>{
     return (

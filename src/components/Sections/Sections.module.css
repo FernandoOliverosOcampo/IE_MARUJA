@@ -6,7 +6,6 @@
 }
 .sectionContainer {
     width: 100%;
-    min-height: 70vh;
     padding: 0;
     margin: 0;
     scroll-snap-align: start;
@@ -119,6 +118,26 @@ span{
   }
 
 /* Responsive Design */
+@media (max-width: 1100px) {
+  .imagen img{
+    height: 35dvh;
+    width: 70dvw;
+} 
+.tarjeta {
+    width: 80vw;
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 1000px) {
+  .imagen img{
+    /* height: 45dvh; */
+    width: 80dvw;
+} 
+.tarjeta {
+    width: 80vw;
+    padding: 1.5rem;
+  }
+}
 @media (max-width: 900px) {
   .tarjetas {
     flex-direction: column;
@@ -130,8 +149,8 @@ span{
     padding: 1.5rem;
   }
   .imagen img {
-    width: 80vw;
-    height: 25vh;
+    width: 75vw;
+    height: 30vh;
     object-fit: cover;
   }
   .whatsappButton {
@@ -153,8 +172,8 @@ span{
     padding: 1rem;
   }
   .imagen img {
-    width: 95vw;
-    height: 20vh;
+    width: 80vw;
+    height: 50vh;
   }
   .whatsappButton {
     width: 90vw;
@@ -173,10 +192,16 @@ span{
     padding: 1rem 0.2rem;
   }
 }
+@media (max-width: 600px) {
+    .imagen img{
+    height: 30dvh;
+    width: 90dvw;
+} 
+}
 
-ul, ol {
+.texto ul, ol {
   display: block;
-  padding-left: 2rem; /* o el valor que prefieras */
+  padding-left: 2rem;
 }
 
 li {

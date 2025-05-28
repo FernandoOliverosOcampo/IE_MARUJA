@@ -1,4 +1,4 @@
-import { items, despegable } from "../../constant.js";
+import { items, despegable } from "../../constant/headerConstant";
 import styles from './Header.module.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -185,7 +185,7 @@ const Menu = () => {
                                                 despegable.map((item) => (
                                                     <li key={item.id}>
                                                         <button
-                                                            className={styles.linkButton}
+                                                            className={styles.linkOptions}
                                                             onClick={() => {
                                                                 handleItemClick(item);
                                                                 setOpenDropdown(null); // Cierra el dropdown al navegar

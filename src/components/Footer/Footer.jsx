@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import {urlWhatsapp} from '../../constant.js'
+import {urlWhatsapp} from '../../constant/urlConstat'
 const Footer = () => {
     return (
         <footer className={styles.footerContainer}>
