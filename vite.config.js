@@ -1,12 +1,16 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+import path from 'path';
+import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      // Enable Fast Refresh
+      fastRefresh: true,
+    }),
     createHtmlPlugin({
       minify: true,
     }),
@@ -43,34 +47,105 @@ export default defineConfig({
     }),
   ],
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ['react', 'react-dom', 'react-router-dom'],
-          leaflet: ['leaflet']
-        }
-      }
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+              return 'vendor-react';
+            }
+            if (id.includes('leaflet')) {
+              return 'vendor-leaflet';
+            }
+            if (id.includes('@fortawesome')) {
+              return 'vendor-icons';
+            }
+            return 'vendor';
+          }
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[ext]/[name]-[hash][extname]',
+      },
     },
-    chunkSizeWarningLimit: 1000,
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true
-      }
+        drop_debugger: true,
+      },
     },
-    sourcemap: false
+    chunkSizeWarningLimit: 1000,
   },
   css: {
-    devSourcemap: false
+    devSourcemap: process.env.NODE_ENV !== 'production',
+    modules: {
+      localsConvention: 'camelCaseOnly',
+    },
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "@/styles/global.css";
+          @import "@/styles/variables.css";
+        `,
+      },
+    },
   },
   server: {
+    port: 3000,
+    open: true,
+    host: true,
+    strictPort: true,
     fs: {
-      strict: true
-    }
+      strict: true,
+      allow: ['..'],
+    },
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+    },
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
-    exclude: []
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      '@fortawesome/react-fontawesome',
+      '@fortawesome/free-solid-svg-icons',
+      'leaflet',
+    ],
+    exclude: [],
+  },
+  resolve: {
+    alias: [
+      {
+        find: '@',
+        replacement: path.resolve(__dirname, 'src'),
+      },
+      {
+        find: '@components',
+        replacement: path.resolve(__dirname, 'src/components'),
+      },
+      {
+        find: '@assets',
+        replacement: path.resolve(__dirname, 'src/assets'),
+      },
+      {
+        find: '@pages',
+        replacement: path.resolve(__dirname, 'src/pages'),
+      },
+    ],
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.css', '.scss'],
+  },
+  define: {
+    'process.env': {},
+    global: {},
   }
 });
