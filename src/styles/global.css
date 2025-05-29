@@ -1,18 +1,5 @@
 /* Estilos globales para la aplicación */
 
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Establecer altura completa para html y body */
-html, body, #root {
-  height: 100%;
-  width: 100%;
-}
-
 /* Estructura principal con Grid */
 #root {
   display: grid;
@@ -26,7 +13,6 @@ main {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  /* padding: 1rem; */
 }
 
 /* Ajustes para el header */
@@ -41,4 +27,31 @@ header {
 footer {
   width: 100%;
   margin-top: auto;
+}
+
+/* Optimización de imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* Mejoras de accesibilidad */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* Clase para contenido oculto visualmente pero accesible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
