@@ -1,15 +1,40 @@
 .footerContainer {
-    background-color: var(--bg-secondary);
-    padding: 2rem;
     text-align: center;
+    padding: 32px 0;
+    background: #ffffff;
+    color: #333;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin-top: 2rem;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.footerContainer p {
-    color: black;
-    font-size: 1rem;
-    font-weight: bold;
+.footerLogo {
+    margin-bottom: 16px;
+}
+.footerLogo img{
+    height: 10dvh;
+}
+.footerInfo p {
     margin: 0;
+    line-height: 1.5;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: 0.95em;
+    color: #888;
+}
+
+.footerLinks a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.footerLinks a:hover {
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 768px) {
@@ -30,4 +55,4 @@
     .footerContainer p {
         font-size: 0.8rem;
     }
-} 
+}

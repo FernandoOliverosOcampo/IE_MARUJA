@@ -1,0 +1,65 @@
+.sectionContainer {
+    width: 100%;
+    min-height: 87dvh;
+    padding: 0;
+    margin: 0;
+    scroll-snap-align: start;
+    background-color: var(--bg-primary);
+    padding-top: 6rem;
+}
+/*QUIENES SOMOS*/
+.quienesSomos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 6rem;
+    /* max-width: 1200px; */
+}
+.imagenSomos{
+    max-width: 50dvw;
+    
+}
+.textoSomos{
+    max-width: 50dvw;
+
+}
+.textoSomos h3{
+    font-size: 2rem;
+
+}
+.textoSomos p{
+    padding-top: 1rem;
+    font-size: 1.2rem;
+
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .quienesSomos {
+    flex-direction: column;
+    padding: 3rem 1rem;
+    gap: 2rem;
+  }
+  .imagenSomos,
+  .textoSomos {
+    max-width: 90vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .quienesSomos {
+    padding: 1.5rem 0.5rem;
+  }
+  .imagenSomos,
+  .textoSomos {
+    max-width: 98vw;
+  }
+  .textoSomos h3 {
+    font-size: 1.3rem;
+  }
+  .textoSomos p {
+    font-size: 1rem;
+  }
+}
+

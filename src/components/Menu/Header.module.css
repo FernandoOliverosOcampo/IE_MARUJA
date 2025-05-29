@@ -70,15 +70,149 @@
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem ;
     transition: color 0.3s, background 0.3s, border-radius 0.3s;
     border-radius: 8px;
+    text-align: start;
+    
+}
+.linkOptions{
+  background: none;
+    border: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem ;
+    transition: color 0.3s, background 0.3s, border-radius 0.3s;
+    border-radius: 8px;
+    text-align: start;
+}
+.linkOptions:hover {
+  transform: translateX(3px);
+  transition: all 0.3s ease-in-out;
+   color: rgb(200,0,0);
+    background: rgb(245,245,245);
 }
 
 .linkButton:hover,
-.menuItem.active .linkButton {
+.menuItem.active .linkButton .linkOptions{
     color: rgb(200,0,0);
     background: rgb(245,245,245);
+    
+}
+/*DESPEGABLE*/
+/* Estilo base del contenedor */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo del botón principal */
+button {
+  background: none;
+  border: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* Estilo del submenú desplegable */
+ul ul {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  padding: 10px 0;
+  min-width: 205px;
+  z-index: 1000;
+  /* Para transición suave */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.2s ease, visibility 0.3s 0.1s;
+  /* Asegurar que el menú esté debajo del botón */
+  top: 100%;
+  left: 0;
+}
+
+/* Mostrar submenú al hacer hover o cuando está abierto */
+li:hover > ul,
+li:focus-within > ul,
+ul[role="menu"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+  
+}
+
+/* Asegurar que el menú no desaparezca al mover el ratón entre el botón y el menú */
+li:hover > ul:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: transparent;
+}
+
+/* Estilo de los elementos del submenú */
+ul ul li {
+  padding: 8px 16px;
+}
+
+ul ul li:hover {
+  background-color: #f5f5f5;
+}
+
+/* Asegúrate de que el elemento padre tenga position relative */
+li {
+  position: relative;
+  display: inline-block;
+}
+
+/* Mejorar accesibilidad del botón del menú */
+button[aria-haspopup="true"] {
+  position: relative;
+  padding-right: 20px;
+}
+
+button[aria-haspopup="true"]:after {
+  content: '▼';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7em;
+}
+
+
+/* Estilos para menú desplegable en móvil */
+.mobileDropdown {
+  width: 100%;
+}
+
+.mobileDropdownButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.dropdownArrow {
+  margin-left: 10px;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
 }
 
 /* Estilos para móvil */
@@ -86,7 +220,9 @@
     .menuControls {
         display: block;
     }
-
+    button[aria-haspopup="true"]:after {
+        content: '';
+    }
     .menuOverlay {
         display: block;
         position: fixed;

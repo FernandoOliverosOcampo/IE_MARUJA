@@ -1,6 +1,6 @@
-import { contenido } from "../../constant";
+import { contenido } from "../../constant/misionVisionConstant";
 import styles from './MYV.module.css'
-const MYV = () =>{
+const MisionVision = () =>{
     return (
         <div className={styles.contendidoMYV}>
             {
@@ -18,4 +18,4 @@ const MYV = () =>{
         </div>
     )
 }
-export default MYV;
+export default MisionVision;

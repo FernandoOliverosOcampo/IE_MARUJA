@@ -1,0 +1,30 @@
+.sectionContainer {
+    width: 100%;
+    min-height: 90dvh;
+    padding: 0;
+    margin: 0;
+    scroll-snap-align: start;
+    background-color: var(--bg-primary);
+    padding-top: 6rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.titulo{
+    font-size: 2rem;
+    padding: 2rem;
+}
+.texto{
+    font-size: 1.2rem;
+    padding: 2rem;
+    width: 95dvw;
+}
+.imagen{
+    width: 80dvw;
+}
+.imagen img{
+    width: 80vw;
+}

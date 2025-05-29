@@ -1,4 +1,4 @@
-import { items } from "../../constant.js";
+import { items, despegable } from "../../constant/headerConstant";
 import styles from './Header.module.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState(null);
 
     useEffect(() => {
         const checkIfMobile = () => {
@@ -88,6 +89,25 @@ const Menu = () => {
         }
     };
 
+{/*Boton despegable*/}
+  const toggleDropdown = (menu) => {
+    if (isMobile) {
+      setOpenDropdown(openDropdown === menu ? null : menu);
+    }
+  };
+
+  const handleMouseEnter = (menu) => {
+    if (!isMobile) {
+      setOpenDropdown(menu);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      setOpenDropdown(null);
+    }
+  };
+
     return (
         <>
             {/* Overlay para el menú lateral */}
@@ -98,7 +118,7 @@ const Menu = () => {
                 <div className={styles.menuContainer}>
                     <div className={styles.menuLogo}>
                         <div className={styles.imagenLogo}>
-                            <img src="./src/assets/img/log.png" alt="logoInstitución" />
+                            <img src="/img/log.webp" alt="logoInstitución" />
                         </div>
                         <div className={styles.textoLogo}>
                             <h1>Institución Educativa Maruja Del Rosario Aguilar</h1>
@@ -136,6 +156,52 @@ const Menu = () => {
                                 </button>
                             </div>
                         ))}
+                        <ul>
+                            <li 
+                                onMouseEnter={() => handleMouseEnter('masInfo')}
+                                onMouseLeave={handleMouseLeave}
+                                className={isMobile ? styles.mobileDropdown : ''}
+                            >
+                                <button 
+                                    onClick={() => toggleDropdown('masInfo')}
+                                    aria-expanded={openDropdown === 'masInfo'}
+                                    aria-haspopup="true"
+                                    className={isMobile ? styles.mobileDropdownButton : ''}
+                                >
+                                    Sobre nosotros
+                                    {isMobile && (
+                                        <span className={styles.dropdownArrow}>
+                                            {openDropdown === 'masInfo' ? '▲' : '▼'}
+                                        </span>
+                                    )}
+                                </button>
+                                {
+                                    openDropdown === 'masInfo' && (
+                                        <ul 
+                                            role="menu"
+                                            aria-label="Submenú de Sobre Nosotros"
+                                        >
+                                            {
+                                                despegable.map((item) => (
+                                                    <li key={item.id}>
+                                                        <button
+                                                            className={styles.linkOptions}
+                                                            onClick={() => {
+                                                                handleItemClick(item);
+                                                                setOpenDropdown(null); // Cierra el dropdown al navegar
+                                                            }}
+                                                        >
+                                                            {item.label}
+                                                        </button>
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
+                                    )
+                                }
+                            </li>
+                        </ul>
+
                     </nav>
                 </div>
             </header>

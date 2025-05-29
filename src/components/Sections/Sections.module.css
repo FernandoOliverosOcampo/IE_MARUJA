@@ -6,7 +6,6 @@
 }
 .sectionContainer {
     width: 100%;
-    min-height: 70vh;
     padding: 0;
     margin: 0;
     scroll-snap-align: start;
@@ -19,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(../../assets/img/fon.jpg) no-repeat center center;
+    background: url(/img/fon.webp) no-repeat center center;
     background-size: cover;
     height: 95vh; /* Reduce la altura de la sección */
     padding: 2rem;
@@ -49,51 +48,163 @@
     z-index: 2; /* Coloca el texto por encima del overlay */
     position: relative; /* Asegura que el texto esté encima */
 }
-/*QUIENES SOMOS*/
-.quienesSomos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    /* max-width: 1200px; */
-}
-.imagenSomos{
-    max-width: 50dvw;
-    
-}
-.textoSomos{
-    font-size: 1.3rem;
-    max-width: 50dvw;
 
-}
-/*LOCATION*/
-.titleMap{
+/*TARJETAS*/
+.container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.titleMap h3{
+.titulo{
     font-size: 2rem;
     padding: 2rem;
 }
-.infomap {
-  display: flex;
-  flex-direction: row-reverse; /* O 'row' según el orden que prefieras */
-  /* gap: 1rem; */
-  align-items: center;
-  justify-content: space-evenly;
+.texto{
+    font-size: 1.2rem;
+    padding: 2rem;
+    width: 90dvw;
+}
+.tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    /* height: 40dvh; */
+    padding: 2rem;
+    width: 30dvw;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+.tarjeta:hover{
+  transform: translateY(-4px);
+  transition: all 0.3s ease-in-out;
+  
+}
+span{
+    font-weight: bold;
+}
+.imagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.imagen img{
+    height: 35dvh;
+    width: 50dvw;
+}
+.whatsappButton {
+    display: inline-block;
+    width: 20dvw;
+    background-color: #25D366;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .whatsappButton:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  }
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+  .imagen img{
+    height: 35dvh;
+    width: 70dvw;
+} 
+.tarjeta {
+    width: 80vw;
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 1000px) {
+  .imagen img{
+    /* height: 45dvh; */
+    width: 80dvw;
+} 
+.tarjeta {
+    width: 80vw;
+    padding: 1.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .tarjetas {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .tarjeta {
+    width: 80vw;
+    padding: 1.5rem;
+  }
+  .imagen img {
+    width: 75vw;
+    height: 30vh;
+    object-fit: cover;
+  }
+  .whatsappButton {
+    width: 60vw;
+    font-size: 0.95rem;
+  }
+  .backgroundSection {
+    padding: 1.5rem 0.5rem;
+  }
+  .textoBanner {
+    font-size: 2rem;
+    padding: 0 0.5rem;
+  }
 }
 
-.datos {
-  max-width: 500px;
-  font-size: 1.3rem;
-  font-weight: bold;
-  padding: 5px;
+@media (max-width: 600px) {
+  .tarjeta {
+    width: 95vw;
+    padding: 1rem;
+  }
+  .imagen img {
+    width: 80vw;
+    height: 50vh;
+  }
+  .whatsappButton {
+    width: 90vw;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  .textoBanner {
+    font-size: 1.3rem;
+    padding: 0 0.2rem;
+  }
+  .titulo {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+  .backgroundSection {
+    padding: 1rem 0.2rem;
+  }
+}
+@media (max-width: 600px) {
+    .imagen img{
+    height: 30dvh;
+    width: 90dvw;
+} 
 }
 
-.leaflet-container {
-  width: 300px !important;
-  height: 200px !important;
-  border-radius: 8px;
-  z-index: 0;
+.texto ul, ol {
+  display: block;
+  padding-left: 2rem;
+}
+
+li {
+  display: list-item;
+  width: auto;
 }

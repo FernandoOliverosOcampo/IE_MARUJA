@@ -1,19 +1,18 @@
 .contendidoMYV{
     display: flex;
     flex-direction: column;
-    height: 100dvh;
     justify-content: center;
     align-items: center;
     padding-top: 7rem;
 }
 .tarjetas{
     display: flex;
-    height: 70dvh;
+
     width: 60dvw;
     flex-direction: column; 
     padding: 2rem;
     margin: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     border-radius: 10px;
 }
 .tarjetas h3{
@@ -21,4 +20,29 @@
 }
 .tarjetas p{
     font-size: 1.2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .tarjetas {
+    width: 90vw;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .tarjetas {
+    width: 98vw;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .tarjetas h3 {
+    font-size: 1.3rem;
+  }
+  .tarjetas p {
+    font-size: 1rem;
+  }
 }

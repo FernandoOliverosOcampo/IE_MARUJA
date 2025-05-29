@@ -1,0 +1,14 @@
+/* Map.module.css */
+.mapResponsive {
+  width: 500px;
+  height: 50vh;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+@media (max-width: 600px) {
+  .mapResponsive {
+    height: 60vh;
+    width: 90dvw;
+  }
+}
