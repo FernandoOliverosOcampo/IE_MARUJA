@@ -45,6 +45,11 @@
     align-items: center; 
     max-width: 300px;
 }
+.imagenLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .imagenLogo img{ 
     height: 8dvh; 
     margin: 2px;}

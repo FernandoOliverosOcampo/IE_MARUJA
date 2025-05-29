@@ -16,7 +16,7 @@ const Historia = () =>{
                     Este enfoque educativo busca preparar ciudadanos con pensamiento crítico y capacidad de resolver problemas en diversos contextos, aportando al desarrollo local, regional, nacional e incluso internacional.</p>
                 </div>
                 <div className={styles.imagen}>
-                    <img src="/img/iemaruja.webp" alt="Imagen institución" />
+                    <img src="/img/iemaruja.webp" alt="Imagen institución" loading="lazy"  />
                 </div>
 
             </div>

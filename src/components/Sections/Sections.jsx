@@ -47,7 +47,7 @@ const Sections = ()=>{
                                         <h3>{item.label}</h3>
                                     </div>
                                     <div className={styles.imagen}>
-                                        <img src={item.img} alt="foto tarjetas" />
+                                        <img src={item.img} alt="foto tarjetas" loading="lazy" />
                                     </div>
                                     <div className="ciclos">
                                         <span>{item.ciclos}</span>
