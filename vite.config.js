@@ -47,35 +47,30 @@ export default defineConfig({
       output: {
         manualChunks: {
           react: ['react', 'react-dom', 'react-router-dom'],
-          leaflet: ['leaflet'],
-          // Agrega aquí otras bibliotecas grandes que uses
-        },
-      },
+          leaflet: ['leaflet']
+        }
+      }
     },
-    chunkSizeWarningLimit: 1000, // Aumenta el límite de advertencia de tamaño del chunk
-    cssCodeSplit: true,
+    chunkSizeWarningLimit: 1000,
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
-        drop_debugger: true,
-      },
+        drop_debugger: true
+      }
     },
-    sourcemap: false,
+    sourcemap: false
   },
   css: {
-    devSourcemap: false,
-    modules: {
-      localsConvention: 'camelCaseOnly',
-    },
+    devSourcemap: false
   },
   server: {
     fs: {
-      strict: true,
-    },
+      strict: true
+    }
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom'],
-    exclude: [],
-  },
+    exclude: []
+  }
 });
