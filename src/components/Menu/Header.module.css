@@ -44,9 +44,11 @@
     justify-content: center;
     align-items: center; 
     max-width: 300px;
+    gap: 0.5rem;
 }
 .imagenLogo img{ 
     height: 8dvh; 
+    width: 5dvw;
     margin: 2px;}
 .textoLogo h1{
     font-size: 1rem; 
