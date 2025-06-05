@@ -119,7 +119,7 @@ button {
   background: none;
   border: none;
   font-weight: bold;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
   cursor: pointer;
 }
 

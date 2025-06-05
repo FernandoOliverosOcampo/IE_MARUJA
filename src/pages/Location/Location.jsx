@@ -39,7 +39,7 @@ const Location = () => {
                         </p>
                         <br />
                         <p>
-                        <FontAwesomeIcon icon={faEnvelope} /> Correo: walrafa1987@gmail.com
+                        <FontAwesomeIcon icon={faEnvelope} /> Correo: wal_09@hotmail.com
                         </p>
                         
                     </span>

@@ -1,4 +1,4 @@
-import { items, despegable } from "../../constant/headerConstant";
+import { items, despegable, botones, resoluciones } from "../../constant/headerConstant";
 import styles from './Header.module.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,11 @@ const Menu = () => {
     const [activeItem, setActiveItem] = useState(null);
     const [isMobile, setIsMobile] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
+
+    const submenus = {
+        1: despegable,
+        2: resoluciones
+    }
 
     useEffect(() => {
         const checkIfMobile = () => {
@@ -156,51 +161,53 @@ const Menu = () => {
                                 </button>
                             </div>
                         ))}
-                        <ul>
-                            <li 
-                                onMouseEnter={() => handleMouseEnter('masInfo')}
-                                onMouseLeave={handleMouseLeave}
-                                className={isMobile ? styles.mobileDropdown : ''}
-                            >
-                                <button 
-                                    onClick={() => toggleDropdown('masInfo')}
-                                    aria-expanded={openDropdown === 'masInfo'}
-                                    aria-haspopup="true"
-                                    className={isMobile ? styles.mobileDropdownButton : ''}
-                                >
-                                    Sobre nosotros
-                                    {isMobile && (
-                                        <span className={styles.dropdownArrow}>
-                                            {openDropdown === 'masInfo' ? '▲' : '▼'}
-                                        </span>
-                                    )}
-                                </button>
-                                {
-                                    openDropdown === 'masInfo' && (
-                                        <ul 
-                                            role="menu"
-                                            aria-label="Submenú de Sobre Nosotros"
+                        {
+                            botones.map((item) => (
+                                <ul key={item.id}>
+                                    
+                                    <li 
+                                        onMouseEnter={() => handleMouseEnter(item.label)}
+                                        onMouseLeave={handleMouseLeave}
+                                        className={isMobile ? styles.mobileDropdown : ''}
+                                    >
+                                        <button 
+                                            onClick={() => toggleDropdown(item.label)}
+                                            aria-expanded={openDropdown === item.label}
+                                            aria-haspopup="true"
+                                            className={isMobile ? styles.mobileDropdownButton : ''}
                                         >
-                                            {
-                                                despegable.map((item) => (
-                                                    <li key={item.id}>
+                                            {item.label}
+                                            {isMobile && (
+                                                <span className={styles.dropdownArrow}>
+                                                    {openDropdown === item.label ? '▲' : '▼'}
+                                                </span>
+                                            )}
+                                        </button>
+                                        {
+                                            openDropdown === item.label && (
+                                                <ul 
+                                                    role="menu"
+                                                    aria-label={`Submenú de ${item.label}`}
+                                                >
+                                                    {(submenus[item.id] || []).map((subitem) => (
+                                                        <li key={subitem.id}>
                                                         <button
                                                             className={styles.linkOptions}
                                                             onClick={() => {
-                                                                handleItemClick(item);
-                                                                setOpenDropdown(null); // Cierra el dropdown al navegar
+                                                                handleItemClick(subitem);
+                                                                setOpenDropdown(null);
                                                             }}
                                                         >
-                                                            {item.label}
+                                                            {subitem.label}
                                                         </button>
-                                                    </li>
-                                                ))
-                                            }
-                                        </ul>
-                                    )
-                                }
-                            </li>
-                        </ul>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                    </li>
+                                </ul>
+                            ))}
+                        
 
                     </nav>
                 </div>
