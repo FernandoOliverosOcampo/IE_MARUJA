@@ -11,6 +11,7 @@ const despegable = [
     { label: '▸ ¿Quiénes somos?', id: 2, type: 'route', href: '/quienes-somos' },
     { label: '▸ Misión y Visión', id: 3, type: 'route', href: '/mision-vision' },
     { label: '▸ Fundación Maruja', id: 4, type: 'route', href: '/fundacion' },
+    {label: '▸ Manual de convivencia', type: 'file' , id: 5, href: '/documentos/Manual.pdf'}
 
 
 ];
@@ -21,7 +22,8 @@ const botones = [
 
 const resoluciones = [
     { label: '▸ Resolución 1195', id: 1, type: 'route', href: '/resolucion' },
-    { label: '▸ Camara comercio', id: 2, type: 'route', href: '/certificado' },
+    { label: '▸ Camara comercio', id: 2, type: 'file', href: '/documentos/Camara.pdf' },
+    
     // Agrega más si lo necesitas
 ];
 

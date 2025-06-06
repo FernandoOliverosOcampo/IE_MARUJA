@@ -190,16 +190,29 @@ const Menu = () => {
                                                     aria-label={`Submenú de ${item.label}`}
                                                 >
                                                     {(submenus[item.id] || []).map((subitem) => (
-                                                        <li key={subitem.id}>
-                                                        <button
-                                                            className={styles.linkOptions}
-                                                            onClick={() => {
+                                                    <li key={subitem.id}>
+                                                            {subitem.type === 'route' ? (
+                                                            <button
+                                                                className={styles.linkOptions}
+                                                                onClick={() => {
                                                                 handleItemClick(subitem);
                                                                 setOpenDropdown(null);
-                                                            }}
-                                                        >
-                                                            {subitem.label}
-                                                        </button>
+                                                                }}
+                                                            >
+                                                                {subitem.label}
+                                                            </button>
+                                                            ) : (
+                                                            <a
+                                                                className={styles.linkOptions}
+                                                                href={subitem.href}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                download={subitem.href.endsWith('.pdf')}
+                                                                onClick={() => setOpenDropdown(null)}
+                                                            >
+                                                                {subitem.label}
+                                                            </a>
+                                                            )}
                                                         </li>
                                                     ))}
                                                 </ul>
