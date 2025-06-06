@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(/img/fon.webp) no-repeat center center;
+    background: url(/img/banner.webp) no-repeat center center;
     background-size: cover;
     height: 95vh; /* Reduce la altura de la sección */
     padding: 2rem;
@@ -97,7 +97,8 @@ span{
 }
 .imagen img{
     height: 35dvh;
-    width: 50dvw;
+    width: 80vw;
+    object-fit: cover;
 }
 .whatsappButton {
     display: inline-block;

@@ -15,7 +15,8 @@ import MisionVision from './pages/M_Y_V/MisionVision';
 import Location from './pages/Location/Location';
 import Resolucion from './pages/Resolucion/Resolucion';
 import Historia from './pages/Historia/Historia';
-
+import Fundacion from './pages/Fundacion/Fundacion'
+import Proyectos from './pages/Proyectos/Proyectos'
 function App() {
  
 
@@ -33,6 +34,8 @@ function App() {
             <Route path="/mision-vision" element={<MisionVision />} />
             <Route path="/resolucion" element={<Resolucion />} />
             <Route path='/historia' element={<Historia />} />
+            <Route path='/fundacion' element={<Fundacion/>}/>
+            <Route path='/proyectos' element={<Proyectos/>}/>
           </Routes>
         </main>
         <footer>
