@@ -6,4 +6,5 @@ const urlResolucion = `https://www.atlantico.gov.co/images/stories/adjuntos/educ
 const urlFundacion = '/documentos/Fundacion.pdf'
 const urlManual = '/documentos/Manual.pdf'
 const urlCamara = '/documentos/Camara.pdf'
-export {urlResolucion, urlWhatsapp, urlFundacion, urlCamara, urlManual}
+const urlPlataforma = 'https://olan.com.co/cemixescolarizado/'
+export {urlResolucion, urlWhatsapp, urlFundacion, urlCamara, urlManual, urlPlataforma}

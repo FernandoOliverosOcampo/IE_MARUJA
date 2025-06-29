@@ -2,7 +2,7 @@ import { items, despegable, botones, resoluciones } from "../../constant/headerC
 import styles from './Header.module.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-
+import {urlPlataforma} from '../../constant/urlConstat'
 const Menu = () => {
     const navigate = useNavigate(); 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -220,7 +220,17 @@ const Menu = () => {
                                     </li>
                                 </ul>
                             ))}
-                        
+            <div className={styles.menuItemEspecial}>
+                    <a
+                        href={urlPlataforma}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.plataformaBoton}
+                    >
+                        Plataforma
+                    </a>
+                    </div>
+
 
                     </nav>
                 </div>
