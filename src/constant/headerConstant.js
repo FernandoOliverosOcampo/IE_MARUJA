@@ -23,6 +23,7 @@ const botones = [
 const resoluciones = [
     { label: '▸ Resolución 1195', id: 1, type: 'route', href: '/resolucion' },
     { label: '▸ Camara comercio', id: 2, type: 'file', href: '/documentos/Camara.pdf' },
+    {label: '▸ Acreditación', type: 'file' , id: 3, href: '/documentos/acreditacion.pdf'},
     
     // Agrega más si lo necesitas
 ];
