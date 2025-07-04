@@ -11,4 +11,4 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  conditions = { Host = ["iemarujadelrosarioaguilar.edu.co"] }
+ 
