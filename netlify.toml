@@ -1,6 +1,5 @@
 [[redirects]]
-  from = "/"
-  to = "https://iemarujadelrosarioaguilar.edu.co/"
+  from = "http://iemarujadelrosarioaguilar.netlify.app/*"
+  to = "https://iemarujadelrosarioaguilar.edu.co/:splat"
   status = 301
   force = true
-  conditions = { Host = ["iemarujadelrosarioaguilar.netlify.app"] }
