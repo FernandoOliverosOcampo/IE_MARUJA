@@ -1,13 +1,14 @@
-# Redirigir netlify.app al dominio edu.co
+# Solo cuando acceden vía netlify.app
 [[redirects]]
   from = "/*"
   to = "https://iemarujadelrosarioaguilar.edu.co/:splat"
   status = 301
   force = true
-  conditions = { Host = ["http://iemarujadelrosarioaguilar.netlify.app"] }
+  conditions = { Host = ["iemarujadelrosarioaguilar.netlify.app"] }
 
-# Habilitar rutas internas en Vite/SPA
+# Rutas internas cuando ya están en el dominio principal
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  conditions = { Host = ["iemarujadelrosarioaguilar.edu.co"] }
