@@ -1,17 +1,16 @@
 import React from 'react';
-import styles from './Mapa.module.css'
-const GoogleMapEmbed = ({ address }) => {
-  const encodedAddress = encodeURIComponent(address);
+import styles from './Mapa.module.css';
 
+const GoogleMapEmbed = () => {
   return (
     <div className={styles.mapResponsive}>
       <iframe
-        title="Mapa"
+        title="Institución Educativa Maruja del Rosario Aguilar"
+        src="https://www.google.com/maps?q=Institución+Educativa+Maruja+del+Rosario+Aguilar+Manatí+Atlántico&z=17&output=embed"
         width="100%"
-        height="100%"
-        frameBorder="0"
+        height="400"
         style={{ border: 0 }}
-        src={`https://www.google.com/maps?q=${encodedAddress}&output=embed`}
+        loading="lazy"
         allowFullScreen
       />
     </div>
