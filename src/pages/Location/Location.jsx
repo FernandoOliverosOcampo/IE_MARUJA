@@ -26,7 +26,7 @@ const Location = () => {
                 <div className={styles.infomap}>
                      <div >
                         <GoogleMapEmbed 
-                            address="Calle 4 # 4-30, Manatí, Colombia" 
+                            // address="Calle 4 # 4-30, Manatí, Colombia" 
                             // label="Institución Educativa Maruja del Rosario Aguilar" 
                         />
                     </div>
