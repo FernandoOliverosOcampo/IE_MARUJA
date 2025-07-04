@@ -18,7 +18,7 @@ const Footer = () => {
                 <p><strong>NIT -</strong> 901831702-6</p>
             </div>
             <div className={styles.footerLinks}>
-                <p>walrafa1987@gmail.com |</p>  <a href={urlWhatsapp} target='_blank'> 3216803975</a>
+                <p>wual_09@hotmail.com |</p>  <a href={urlWhatsapp} target='_blank'> 3216803975</a>
             </div>
         </footer>
     );
