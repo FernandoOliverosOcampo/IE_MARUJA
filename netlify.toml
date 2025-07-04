@@ -1,10 +1,9 @@
 # Solo cuando acceden vía netlify.app
 [[redirects]]
-  from = "/*"
+  from = "https://iemarujadelrosarioaguilar.netlify.app/"
   to = "https://iemarujadelrosarioaguilar.edu.co/:splat"
   status = 301
   force = true
-  conditions = { Host = ["iemarujadelrosarioaguilar.netlify.app"] }
 
 # Rutas internas cuando ya están en el dominio principal
 [[redirects]]
