@@ -4,7 +4,7 @@
   to = "https://iemarujadelrosarioaguilar.edu.co/"
   status = 301
   force = true
-  conditions = { Host = ["iemarujadelrosarioaguilar.netlify.app"] }
+
 
 # Rutas internas cuando ya están en el dominio principal
 [[redirects]]
