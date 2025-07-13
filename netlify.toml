@@ -5,6 +5,12 @@
   status = 301
   force = true
 
+# Redirección de dominio
+[[redirects]]
+  from = "https://www.iemarujadelrosarioaguilar.edu.co/*"
+  to = "https://iemarujadelrosarioaguilar.edu.co/:splat"
+  status = 301
+  force = true
 
 # Rutas internas cuando ya están en el dominio principal
 [[redirects]]
