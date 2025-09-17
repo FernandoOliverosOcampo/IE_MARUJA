@@ -126,7 +126,8 @@ const Menu = () => {
                             <img src="/img/log.webp" alt="logoInstitución" />
                         </div>
                         <div className={styles.textoLogo}>
-                            <h1>Institución Educativa Maruja Del Rosario Aguilar</h1>
+                            <h1 className={styles.logoTextoCompleto}>Institución Educativa Maruja Del Rosario Aguilar</h1>
+                            <h1 className={styles.logoTextoCorto}>I.E. Maruja del Rosario Aguilar</h1>
                         </div>
                     </div>
                     <div className={styles.menuControls}>
@@ -174,7 +175,7 @@ const Menu = () => {
                                             onClick={() => toggleDropdown(item.label)}
                                             aria-expanded={openDropdown === item.label}
                                             aria-haspopup="true"
-                                            className={isMobile ? styles.mobileDropdownButton : ''}
+                                            className={`${styles.linkButton} ${isMobile ? styles.mobileDropdownButton : ''}`}
                                         >
                                             {item.label}
                                             {isMobile && (
