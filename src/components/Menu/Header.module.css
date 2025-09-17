@@ -57,11 +57,22 @@
     font-size: 1rem; 
     /* text-align: center; */
 }
+.logoTextoCompleto {
+  display: block;
+}
+.logoTextoCorto {
+  display: none;
+}
 .menuOptions {
     display: flex;
     gap: 2rem;
     align-items: center;
     background-color: rgb(255,255,255);
+}
+
+.menuOptions > ul {
+  margin: 0;
+  padding: 0;
 }
 
 .menuItem {
@@ -72,7 +83,7 @@
     background: none;
     border: none;
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 500 !important;
     font-size: 1rem;
     cursor: pointer;
     padding: 0.5rem ;
@@ -85,15 +96,18 @@
   background: none;
     border: none;
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 400 !important;
     font-size: 1rem;
     cursor: pointer;
     padding: 0.5rem ;
     transition: color 0.3s, background 0.3s, border-radius 0.3s;
     border-radius: 8px;
     text-align: start;
+    display: block; /* para que el hover cubra todo el ancho */
+    width: 100%;
 }
-.linkOptions:hover {
+.linkOptions:hover,
+ul ul li:hover .linkOptions {
   transform: translateX(3px);
   transition: all 0.3s ease-in-out;
    color: rgb(200,0,0);
@@ -244,6 +258,7 @@ button[aria-haspopup="true"]:after {
 @media screen and (max-width: 768px) {
     .menuControls {
         display: block;
+        gap: 2rem;
     }
     button[aria-haspopup="true"]:after {
         content: '';
@@ -282,6 +297,20 @@ button[aria-haspopup="true"]:after {
         border-bottom-left-radius: 24px;
         align-items: flex-start;
         gap: 2rem;
+    }
+
+    /* Optimizar distribución del header en móvil */
+    .menuContainer {
+        justify-content: space-between;
+        padding: 0.5rem 0.75rem;
+        height: 9dvh;
+    }
+    .menuLogo {
+        max-width: none;
+    }
+    .textoLogo {
+        margin-left: 6px;
+        /* width: 30dvw; */
     }
 
     .menuOptions.active {
@@ -326,4 +355,16 @@ button[aria-haspopup="true"]:after {
         transform: translateY(-12px) rotate(-45deg);
         background-color: rgb(200,0,0);
     }
+}
+
+/* Pantallas muy pequeñas: ocultar todo el texto para que solo quede el logo */
+@media screen and (max-width: 420px) {
+  .logoTextoCompleto { display: none !important; }
+  .logoTextoCorto { display: none !important; }
+}
+
+/* Refuerzo de visibilidad: móvil muestra el texto corto y oculta el largo */
+@media screen and (max-width: 768px) {
+  .textoLogo .logoTextoCompleto { display: none !important; }
+  .textoLogo .logoTextoCorto { display: block !important; }
 }
