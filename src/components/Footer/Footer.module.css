@@ -1,58 +1,136 @@
-.footerContainer {
-    text-align: center;
-    padding: 32px 0;
-    background: #ffffff;
-    color: #333;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin-top: 2rem;
-   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+.footer {
+    position: relative;
+    background: var(--dark);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.95rem;
 }
 
-.footerLogo {
-    margin-bottom: 16px;
-}
-.footerLogo img{
-    height: 10dvh;
-}
-.footerInfo p {
-    margin: 0;
-    line-height: 1.5;
+.footer::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
 }
 
-.footerLinks {
+.grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 2.5rem;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+}
+
+.footer h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+.brandLogo {
     display: flex;
-    justify-content: center;
-    margin-top: 16px;
-    font-size: 0.95em;
-    color: #888;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
-.footerLinks a {
-    color: #888;
-    text-decoration: none;
-    margin: 0 4px;
+.brandLogo img {
+    height: 60px;
+    width: auto;
+    background: #fff;
+    border-radius: 12px;
+    padding: 4px;
 }
 
-.footerLinks a:hover {
-    text-decoration: underline;
+.brandLogo small {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-weight: 700;
 }
 
-@media screen and (max-width: 768px) {
-    .footerContainer {
-        padding: 1.5rem;
+.brandLogo strong {
+    font-family: var(--font-heading);
+    color: #fff;
+    font-size: 1.05rem;
+}
+
+.brand p {
+    margin-bottom: 1.25rem;
+    max-width: 340px;
+}
+
+.list li + li,
+.contact li + li {
+    margin-top: 0.6rem;
+}
+
+.list a,
+.contact a {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color var(--transition);
+}
+
+.list a:hover,
+.contact a:hover {
+    color: var(--accent);
+}
+
+.list svg {
+    margin-right: 0.35rem;
+    color: var(--accent);
+}
+
+.contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.contact svg {
+    margin-top: 0.3rem;
+    color: var(--accent);
+    width: 16px;
+}
+
+.contact a {
+    word-break: break-all;
+}
+
+.bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+}
+
+.bottomInner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.bottomInner strong {
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
     }
-    
-    .footerContainer p {
-        font-size: 0.9rem;
-    }
 }
 
-@media screen and (max-width: 576px) {
-    .footerContainer {
-        padding: 1rem;
+@media (max-width: 560px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-top: 3rem;
     }
-    
-    .footerContainer p {
-        font-size: 0.8rem;
+
+    .bottomInner {
+        flex-direction: column;
+        padding-bottom: 5rem;
     }
 }

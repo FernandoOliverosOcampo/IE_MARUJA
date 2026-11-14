@@ -1,238 +1,150 @@
 import { items, despegable, botones, resoluciones } from "../../constant/headerConstant";
 import styles from './Header.module.css';
 import { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
-import {urlPlataforma} from '../../constant/urlConstat'
+import { NavLink, Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faPhone, faEnvelope, faLocationDot, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { urlPlataforma, contacto } from '../../constant/urlConstat'
+
+const submenus = {
+    1: despegable,
+    2: resoluciones
+}
+
 const Menu = () => {
-    const navigate = useNavigate(); 
+    const location = useLocation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeItem, setActiveItem] = useState(null);
-    const [isMobile, setIsMobile] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null);
-
-    const submenus = {
-        1: despegable,
-        2: resoluciones
-    }
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-        const checkIfMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-        
-        checkIfMobile();
-        window.addEventListener('resize', checkIfMobile);
-        
-        return () => {
-            window.removeEventListener('resize', checkIfMobile);
-        };
-    }, []);
-    
-    useEffect(() => {
-        const sections = items.map(item => document.getElementById(item.id));
-        
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            const menuElement = document.querySelector(`.${styles.menu}`);
-            const menuHeight = menuElement ? menuElement.offsetHeight : 0;
-
-            const currentSection = sections.find((section, index) => {
-                if (!section) return false;
-
-                const sectionTop = section.offsetTop - menuHeight - 50;
-                const sectionBottom = sectionTop + section.offsetHeight;
-
-                if (index === sections.length - 1) {
-                    return scrollPosition >= sectionTop;
-                }
-
-                return scrollPosition >= sectionTop && scrollPosition < sectionBottom;
-            });
-
-            if (currentSection) {
-                setActiveItem(currentSection.id);
-            }
-        };
-        
-        handleScroll();
-        window.addEventListener('scroll', handleScroll);
-        
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        const onScroll = () => setScrolled(window.scrollY > 20);
+        onScroll();
+        window.addEventListener('scroll', onScroll);
+        return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    // Bloquear scroll cuando el menú está abierto en móvil
     useEffect(() => {
-        if (isMenuOpen && isMobile) {
-            document.body.classList.add('menu-open');
-        } else {
-            document.body.classList.remove('menu-open');
-        }
+        setIsMenuOpen(false);
+        setOpenDropdown(null);
+    }, [location.pathname]);
+
+    useEffect(() => {
+        document.body.classList.toggle('menu-open', isMenuOpen);
         return () => document.body.classList.remove('menu-open');
-    }, [isMenuOpen, isMobile]);
+    }, [isMenuOpen]);
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    };
+    const canHover = () => window.matchMedia('(hover: hover) and (min-width: 981px)').matches;
 
-    const handleItemClick = (item) => {
-        setActiveItem(item.id);
-
-        if (item.type === 'scroll') {
-            // Scroll interno
-            const section = document.getElementById(item.href);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        } else if (item.type === 'route') {
-            // Navegación a otra ruta
-            navigate(item.href);
-        }
-        if(isMobile){
-            setIsMenuOpen(false)
-        }
-    };
-
-{/*Boton despegable*/}
-  const toggleDropdown = (menu) => {
-    if (isMobile) {
-      setOpenDropdown(openDropdown === menu ? null : menu);
-    }
-  };
-
-  const handleMouseEnter = (menu) => {
-    if (!isMobile) {
-      setOpenDropdown(menu);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      setOpenDropdown(null);
-    }
-  };
+    const isGroupActive = (id) =>
+        (submenus[id] || []).some((sub) => sub.type === 'route' && sub.href === location.pathname);
 
     return (
         <>
-            {/* Overlay para el menú lateral */}
-            {isMobile && isMenuOpen && (
-                <div className={styles.menuOverlay} onClick={toggleMenu}></div>
-            )}
-            <header className={styles.menu}>
-                <div className={styles.menuContainer}>
-                    <div className={styles.menuLogo}>
-                        <div className={styles.imagenLogo}>
-                            <img src="/img/log.webp" alt="logoInstitución" />
-                        </div>
-                        <div className={styles.textoLogo}>
-                            <h1 className={styles.logoTextoCompleto}>Institución Educativa Maruja Del Rosario Aguilar</h1>
-                            <h1 className={styles.logoTextoCorto}>I.E. Maruja del Rosario Aguilar</h1>
-                        </div>
+            <div className={styles.topBar}>
+                <div className={`container ${styles.topBarInner}`}>
+                    <div className={styles.topBarInfo}>
+                        <span><FontAwesomeIcon icon={faLocationDot} /> {contacto.direccion}</span>
+                        <a href={contacto.telefonoHref}><FontAwesomeIcon icon={faPhone} /> {contacto.telefono}</a>
+                        <a href={`mailto:${contacto.correo}`}><FontAwesomeIcon icon={faEnvelope} /> {contacto.correo}</a>
                     </div>
-                    <div className={styles.menuControls}>
-                        <button 
-                            className={`${styles.menuToggle} ${isMenuOpen ? styles.active : ''}`}
-                            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
-                            onClick={toggleMenu}
-                            aria-expanded={isMenuOpen}
-                        >
-                            <span className={styles.bar}></span>
-                            <span className={styles.bar}></span>
-                            <span className={styles.bar}></span>
-                        </button>
-                    </div>
-                    <nav 
+                    <span className={styles.topBarBadge}>Matrículas abiertas todo el año</span>
+                </div>
+            </div>
+
+            <header className={`${styles.menu} ${scrolled ? styles.scrolled : ''}`}>
+                <div className={`container ${styles.menuContainer}`}>
+                    <Link to="/" className={styles.menuLogo} aria-label="Ir al inicio">
+                        <img src="/img/log.webp" alt="Escudo Institución Educativa Maruja del Rosario Aguilar" />
+                        <span className={styles.logoText}>
+                            <small>Institución Educativa</small>
+                            <strong>Maruja del Rosario Aguilar</strong>
+                        </span>
+                    </Link>
+
+                    <button
+                        className={`${styles.menuToggle} ${isMenuOpen ? styles.active : ''}`}
+                        aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-expanded={isMenuOpen}
+                    >
+                        <span className={styles.bar}></span>
+                        <span className={styles.bar}></span>
+                        <span className={styles.bar}></span>
+                    </button>
+
+                    {isMenuOpen && <div className={styles.menuOverlay} onClick={() => setIsMenuOpen(false)}></div>}
+
+                    <nav
                         className={`${styles.menuOptions} ${isMenuOpen ? styles.active : ''}`}
-                        role="navigation"
                         aria-label="Menú principal"
                     >
-                        {items.map((item) => (
-                            <div
-                                className={`${styles.menuItem} ${
-                                    activeItem === item.id ? styles.active : ''
-                                }`}
-                                key={item.id}
-                            >
-                                <button
-                                    onClick={() => handleItemClick(item)}
-                                    className={styles.linkButton}
-                                >
-                                    {item.label}
-                                </button>
-                            </div>
-                        ))}
-                        {
-                            botones.map((item) => (
-                                <ul key={item.id}>
-                                    
-                                    <li 
-                                        onMouseEnter={() => handleMouseEnter(item.label)}
-                                        onMouseLeave={handleMouseLeave}
-                                        className={isMobile ? styles.mobileDropdown : ''}
+                        <ul className={styles.navList}>
+                            {items.map((item) => (
+                                <li key={item.id}>
+                                    <NavLink
+                                        to={item.href}
+                                        end
+                                        className={({ isActive }) => `${styles.navLink} ${isActive ? styles.activeLink : ''}`}
                                     >
-                                        <button 
-                                            onClick={() => toggleDropdown(item.label)}
-                                            aria-expanded={openDropdown === item.label}
+                                        {item.label}
+                                    </NavLink>
+                                </li>
+                            ))}
+
+                            {botones.map((item) => {
+                                const isOpen = openDropdown === item.id;
+                                return (
+                                    <li
+                                        key={item.id}
+                                        className={`${styles.dropdown} ${isOpen ? styles.open : ''}`}
+                                        onMouseEnter={() => canHover() && setOpenDropdown(item.id)}
+                                        onMouseLeave={() => canHover() && setOpenDropdown(null)}
+                                    >
+                                        <button
+                                            onClick={() => setOpenDropdown(isOpen ? null : item.id)}
+                                            aria-expanded={isOpen}
                                             aria-haspopup="true"
-                                            className={`${styles.linkButton} ${isMobile ? styles.mobileDropdownButton : ''}`}
+                                            className={`${styles.navLink} ${isGroupActive(item.id) ? styles.activeLink : ''}`}
                                         >
                                             {item.label}
-                                            {isMobile && (
-                                                <span className={styles.dropdownArrow}>
-                                                    {openDropdown === item.label ? '▲' : '▼'}
-                                                </span>
-                                            )}
+                                            <FontAwesomeIcon icon={faChevronDown} className={styles.chevron} />
                                         </button>
-                                        {
-                                            openDropdown === item.label && (
-                                                <ul 
-                                                    role="menu"
-                                                    aria-label={`Submenú de ${item.label}`}
-                                                >
-                                                    {(submenus[item.id] || []).map((subitem) => (
-                                                    <li key={subitem.id}>
-                                                            {subitem.type === 'route' ? (
-                                                            <button
-                                                                className={styles.linkOptions}
-                                                                onClick={() => {
-                                                                handleItemClick(subitem);
-                                                                setOpenDropdown(null);
-                                                                }}
-                                                            >
-                                                                {subitem.label}
-                                                            </button>
-                                                            ) : (
-                                                            <a
-                                                                className={styles.linkOptions}
-                                                                href={subitem.href}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                download={subitem.href.endsWith('.pdf')}
-                                                                onClick={() => setOpenDropdown(null)}
-                                                            >
-                                                                {subitem.label}
-                                                            </a>
-                                                            )}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
+                                        <ul className={styles.submenu} role="menu" aria-label={`Submenú de ${item.label}`}>
+                                            {(submenus[item.id] || []).map((subitem) => (
+                                                <li key={subitem.id} role="none">
+                                                    {subitem.type === 'route' ? (
+                                                        <NavLink role="menuitem" to={subitem.href} className={styles.subLink}>
+                                                            {subitem.label}
+                                                        </NavLink>
+                                                    ) : (
+                                                        <a
+                                                            role="menuitem"
+                                                            className={styles.subLink}
+                                                            href={subitem.href}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                        >
+                                                            {subitem.label}
+                                                            <span className={styles.pdfTag}>PDF</span>
+                                                        </a>
+                                                    )}
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </li>
-                                </ul>
-                            ))}
-            <div className={styles.menuItemEspecial}>
-                    <a
-                        href={urlPlataforma}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.plataformaBoton}
-                    >
-                        Plataforma
-                    </a>
-                    </div>
+                                );
+                            })}
+                        </ul>
 
-
+                        <a
+                            href={urlPlataforma}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`btn btn-accent ${styles.plataformaBoton}`}
+                        >
+                            Plataforma <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                        </a>
                     </nav>
                 </div>
             </header>
