@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/themes.css';
 import 'leaflet/dist/leaflet.css';
@@ -7,6 +6,8 @@ import './styles/global.css';
 {/*Components*/}
 import Menu from './components/Menu/Header'
 import Footer from './components/Footer/Footer'
+import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat'
+import ScrollEffects from './components/ScrollEffects/ScrollEffects'
 
 {/*Pages routes*/}
 import Inicio from './pages/Inicio/Inicio';
@@ -17,15 +18,13 @@ import Resolucion from './pages/Resolucion/Resolucion';
 import Historia from './pages/Historia/Historia';
 import Fundacion from './pages/Fundacion/Fundacion'
 import Proyectos from './pages/Proyectos/Proyectos'
-function App() {
- 
 
+function App() {
   return (
     <Router>
+      <ScrollEffects />
       <div className="app-container">
-        <header>
-          <Menu />
-        </header>
+        <Menu />
         <main>
           <Routes>
             <Route path='/' element={<Inicio />} />
@@ -38,9 +37,8 @@ function App() {
             <Route path='/proyectos' element={<Proyectos/>}/>
           </Routes>
         </main>
-        <footer>
-          <Footer />
-        </footer>
+        <Footer />
+        <WhatsAppFloat />
       </div>
     </Router>
   );

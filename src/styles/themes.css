@@ -1,62 +1,33 @@
+:root {
+    --primary: #0f4c81;
+    --primary-600: #0b3a63;
+    --primary-50: #e8f1fa;
+    --secondary: #2e9e5b;
+    --secondary-50: #e6f5ec;
+    --accent: #f28c28;
+    --accent-600: #d9731a;
+    --accent-50: #fff1e3;
+    --whatsapp: #25d366;
+    --dark: #0a2540;
 
-/* Estilos globales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --bg: #f5f8fc;
+    --surface: #ffffff;
+    --text: #344256;
+    --muted: #64748b;
+    --heading: #0a2540;
+    --border: #e2e8f0;
+
+    --font-heading: 'Montserrat', 'Segoe UI', sans-serif;
+    --font-body: 'Nunito Sans', 'Segoe UI', sans-serif;
+
+    --radius-sm: 8px;
+    --radius: 14px;
+    --radius-lg: 22px;
+    --shadow-sm: 0 2px 8px rgba(10, 37, 64, 0.06);
+    --shadow: 0 10px 30px rgba(10, 37, 64, 0.08);
+    --shadow-lg: 0 20px 50px rgba(10, 37, 64, 0.14);
+    --transition: 0.25s ease;
+
+    --container: 1180px;
+    --header-height: 76px;
 }
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Monserrat;
-    line-height: 1.6;
-    color: var(--text-primary);
-    background-color: var(--bg-primary);
-    transition: background-color var(--transition-speed) ease,
-                color var(--transition-speed) ease;
-}
-
-/* Estilos para secciones */
-section {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    transition: background-color var(--transition-speed) ease,
-                color var(--transition-speed) ease;
-}
-
-/* Estilos para tarjetas y contenedores */
-.card, .container {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    box-shadow: var(--shadow-sm);
-    transition: background-color var(--transition-speed) ease,
-                color var(--transition-speed) ease,
-                box-shadow var(--transition-speed) ease;
-}
-
-/* Estilos para enlaces */
-a {
-    text-decoration: none;
-    color: var(--accent-color);
-    transition: color var(--transition-speed) ease;
-}
-
-a:hover {
-    color: var(--info-color);
-}
-
-/* Estilos para botones */
-button {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    transition: background-color var(--transition-speed) ease,
-                color var(--transition-speed) ease;
-}
-
-button:hover {
-    background-color: var(--info-color);
-} 
