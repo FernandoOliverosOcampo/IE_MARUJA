@@ -3,8 +3,8 @@ import styles from './Header.module.css';
 import { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faPhone, faEnvelope, faLocationDot, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { urlPlataforma, contacto } from '../../constant/urlConstat'
+import { faChevronDown, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { urlPlataforma } from '../../constant/urlConstat'
 
 const submenus = {
     1: despegable,
@@ -41,17 +41,6 @@ const Menu = () => {
 
     return (
         <>
-            <div className={styles.topBar}>
-                <div className={`container ${styles.topBarInner}`}>
-                    <div className={styles.topBarInfo}>
-                        <span><FontAwesomeIcon icon={faLocationDot} /> {contacto.direccion}</span>
-                        <a href={contacto.telefonoHref}><FontAwesomeIcon icon={faPhone} /> {contacto.telefono}</a>
-                        <a href={`mailto:${contacto.correo}`}><FontAwesomeIcon icon={faEnvelope} /> {contacto.correo}</a>
-                    </div>
-                    <span className={styles.topBarBadge}>Matrículas abiertas todo el año</span>
-                </div>
-            </div>
-
             <header className={`${styles.menu} ${scrolled ? styles.scrolled : ''}`}>
                 <div className={`container ${styles.menuContainer}`}>
                     <Link to="/" className={styles.menuLogo} aria-label="Ir al inicio">

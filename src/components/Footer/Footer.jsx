@@ -72,6 +72,7 @@ const Footer = () => {
                         <li><FontAwesomeIcon icon={faPhone} /><a href={contacto.telefonoHref}>{contacto.telefono}</a></li>
                         <li><FontAwesomeIcon icon={faEnvelope} /><a href={`mailto:${contacto.correo}`}>{contacto.correo}</a></li>
                     </ul>
+                    <span className={styles.badge}>Matrículas abiertas todo el año</span>
                 </div>
             </div>
 

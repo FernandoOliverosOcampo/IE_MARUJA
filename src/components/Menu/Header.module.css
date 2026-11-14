@@ -1,48 +1,3 @@
-.topBar {
-    background: var(--dark);
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 0.82rem;
-}
-
-.topBarInner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    min-height: 38px;
-}
-
-.topBarInfo {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.topBarInfo a,
-.topBarInfo span {
-    color: inherit;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-}
-
-.topBarInfo svg {
-    color: var(--accent);
-}
-
-.topBarInfo a:hover {
-    color: #fff;
-}
-
-.topBarBadge {
-    font-weight: 700;
-    color: var(--dark);
-    background: var(--accent);
-    padding: 0.15rem 0.75rem;
-    border-radius: 999px;
-    white-space: nowrap;
-}
-
 .menu {
     position: sticky;
     top: 0;
@@ -253,17 +208,7 @@
     display: none;
 }
 
-@media (max-width: 1080px) {
-    .topBarInfo span {
-        display: none;
-    }
-}
-
 @media (max-width: 980px) {
-    .topBar {
-        display: none;
-    }
-
     .menu {
         background: var(--surface);
         backdrop-filter: none;
